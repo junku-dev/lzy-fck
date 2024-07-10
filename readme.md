@@ -3,7 +3,7 @@ A simple script that will automate mouse and keyboard movements.
 
 If you need to keep your computer awake for awhile and you don't feel like changing your system settings this is for you.
 
-If you have a boring job and want to trick microsoft Teams or your boss that you are active this is also for you.
+If you have a boring job and want to trick microsoft Teams or your boss into thinking that you are active then this is also for you.
 
 ## About
 This app leverages the pyautogui api and all of its dependencies. It is minimal code and I aim to make it user friendly.
@@ -18,6 +18,4 @@ Not everyone will have c/c++ on their system and python is by far the easiest to
 They should work the same, but I have noticed that pyautogui doesn't play as nice in debian. Works fine in Windows.
 
 <ins>Why is there not a MAC version.?</ins><br>
-I don't have a MAC laying around to test with. According to the API author it should work fine with MAC OS.
-
-
+I don't have a MAC laying around to test with. According to the API author, pyautogui should work fine with MAC OS.

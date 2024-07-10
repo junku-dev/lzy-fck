@@ -2,9 +2,12 @@ import pyautogui
 import time
 import numpy as np
 
+x:int
+y:int
+
 def isDebug() -> bool:
     print("DEBUG will show mouse position and operations in your terminal.")
-    q = str(input("Enable Debug Mode? [y/n] "))
+    q:str = input("Enable Debug Mode? [y/n]" )
     
     if q == "n":
         return False
@@ -15,58 +18,66 @@ def isDebug() -> bool:
         print("[DEFAULT] DEBUG: ON")
         return True
 
-    
 def sleepTime() -> int:
     print("\nHow long do you want to wait between inputs?\n" + "Example: 5 = sleep for 5 seconds")
     try:
-        s = int(input("Enter Sleep Time in seconds: "))
+        s:int = int(input("Enter Sleep time in seconds: "))
         if s > 180:
-            print("\nERROR: Too long...")
-            print("Defaulting to 5")
+            print("\nError: Too long...")
+            print("Defaulting to 5 seconds...")
             return 5
         return s
     except ValueError:
         print("\nValueError: please enter a number less than 180...")
         print("[DEFAULT] sleeping for 5 seconds...")
         return 5
-    
-def run_app(debug: bool, sleepTime: int) -> None:
-    print('\npress "ctrl-c" to quit...')
-    size = pyautogui.size()
-    
-    print(size) if debug == True else ""
+
+
+def run_app(debug:bool, sleepTime:int) -> None:
+    try:
+        print('press "ctrl-c" to quit...')
         
-    pyautogui.FAILSAFE = False
-
-    while True:
+        size:int = pyautogui.size()
+        print(size) if debug == True else False
         try:
-            time.sleep(sleepTime)
-            
-            x = np.random.randint(1, size[0])
-            y = np.random.randint(1, size[1])
-            pyautogui.moveTo(x, y)
-            print("[DEBUG] POS: ", x, y) if debug == True else ""
-            
-            pyautogui.scroll(300, x, y)
-            print("[DEBUG] SCROLL: ", "UP") if debug == True else ""
-            pyautogui.scroll(-300, x, y)
-            print("[DEBUG] SCROLL: ", "DOWN") if debug == True else ""
-            
-            pyautogui.scroll(300, x, y)
-            print("[DEBUG] SCROLL: ", "UP") if debug == True else ""
-            pyautogui.scroll(-300, x, y)
-            print("[DEBUG] SCROLL: ", "DOWN") if debug == True else ""
-            
-            print("[DEBUG] SCROLL: ", "UP") if debug == True else ""
-            pyautogui.scroll(-300, x, y)
-            
-            for i in range(0, 3):
-                pyautogui.press('shift')
-                print("[DEBUG] KEY INPUT: ", "SHIFT") if debug == True else ""
-                            
-        except:
-            print('Done')
-            quit()
+            while True:
+                
+                    time.sleep(sleepTime)
+                    
+                    x:int = np.random.randint(1,size[0])
+                    y:int = np.random.randint(1,size[1])
+                    for i in range(0, 50):
+                        pyautogui.moveTo(x,y)
+                        print("[DEBUG] POS:", x, y) if debug == True else ""
+                        if i == 0 and x > size[0] or y > size[0]:
+                            x = np.random.randint(1,size[0])
+                            y = np.random.randint(1,size[1])
+                            continue
+                        x += 2
+                        y += 2
+                    
+                    pyautogui.scroll(300,x,y)
+                    print("[DEBUG] SCROLL: UP") if debug == True else ""
+                    pyautogui.scroll(-300,x,y)
+                    print("[DEBUG] SCROLL: DOWN") if debug == True else ""
+                    
+                    pyautogui.scroll(300,x,y)
+                    print("[DEBUG] SCROLL: UP") if debug == True else ""
+                    pyautogui.scroll(-300,x,y)
+                    print("[DEBUG] SCROLL: DOWN") if debug == True else ""
+                    
+                    pyautogui.scroll(300,x,y)
+                    print("[DEBUG] SCROLL: UP") if debug == True else ""
 
-if __name__ == "__main__": 
+                    for i in range(0,3):
+                        pyautogui.press('shift')
+                        print("[DEBUG] KeyPress: SHIFT") if debug == True else ""
+        except Exception as e:
+            print("ERROR: ", e)
+            
+    except KeyboardInterrupt:
+        print("Done.")
+        quit()  
+
+if __name__ == "__main__":
     run_app(debug=isDebug(), sleepTime=sleepTime())

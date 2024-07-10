@@ -6,6 +6,8 @@ x:int
 y:int
 
 def isDebug() -> bool:
+    pyautogui.FAILSAFE = False
+    
     print("DEBUG will show mouse position and operations in your terminal.")
     q:str = input("Enable Debug Mode? [y/n]" )
     

@@ -29,6 +29,9 @@ time
 numpy
 ```
 
+#### Install Packages
+```pip3 install -r /path/requirements.txt```
+
 ## How it Works
 After launching the program successfully, the program will take control of your mouse and keyboard, but in a mostly non-intrusive way. 
 

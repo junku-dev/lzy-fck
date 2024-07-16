@@ -33,6 +33,14 @@ numpy
 ```pip3 install -r /path/requirements.txt```
 
 ## How it Works
+run: ```python3 app.py```
+
+Enter: ```[y/n]``` for sleep mode.
+
+Enter: ```<number``` for sleepTime (seconds).
+
+Quick Start: Press Enter Twice to skip all prompts and use defaults.
+
 After launching the program successfully, the program will take control of your mouse and keyboard, but in a mostly non-intrusive way. 
 
 ### Debug Mode

@@ -64,6 +64,6 @@ This is why I will leave Linux as ```Experimental``` I need to do more tests in 
 If you need to keep your system awake while you compile code, run a slow app, whatever. This can help out. Even if you lock your computer, the program will continue to run.
 
 <ins>Fool Your Annoying Boss:</ins><br>
-If you have a slow job and need to keep your system active. This is also great. In a lot of cases, work applications like "Microsoft Teams" checks for use inputs periodically to see if someone is "away" or not. Some managers check employee statuses regularly. Sometimes you step away for a brief amount of time, or you sitting and waiting for something to compile. You don't touch your mouse or keyboard while you wait. Your status changes to "away." Your manager then asks "why were you away for x amount of time." It's annoying. 
+If you have a slow job and need to keep your system active. This is also great. In a lot of cases, work applications like "Microsoft Teams" checks for user inputs periodically to see if someone is "away" or not. Some managers check employee statuses regularly. Sometimes you step away for a brief amount of time, or your sitting and waiting for something to compile. You don't touch your mouse or keyboard while you wait. Your status changes to "away." Your manager then asks "why were you away for x amount of time." It's annoying. 
 
 ```lzy_fck``` prevents this. Even if you lock your computer, your mouse will still move and scroll, and the program will press shift. Your status will show "available."

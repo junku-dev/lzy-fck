@@ -12,7 +12,6 @@ def isDebug() -> bool:
     print("DEBUG will show mouse position and operations in your terminal.")
     q:str = input("Enable Debug Mode? [y/n] ")
     
-    
     if q == "n":
         return False
     elif q == "y":
